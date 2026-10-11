@@ -1,0 +1,6 @@
+id: gen-04
+domain: data
+difficulty: 4
+points: 1.0
+verifier: script
+timeout_minutes: 15

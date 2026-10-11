@@ -1,0 +1,6 @@
+id: hell-04
+domain: algo
+difficulty: 6
+points: 1.0
+verifier: pytest
+timeout_minutes: 25

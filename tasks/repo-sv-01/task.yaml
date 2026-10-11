@@ -1,0 +1,7 @@
+id: repo-sv-01
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 20
+source: 合成(真实生产事故模式:重试风暴/状态机越权/快照别名)

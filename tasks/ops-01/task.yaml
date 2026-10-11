@@ -1,0 +1,6 @@
+id: ops-01
+domain: ops
+difficulty: 3
+points: 1.0
+verifier: script
+timeout_minutes: 10

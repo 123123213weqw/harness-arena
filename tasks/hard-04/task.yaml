@@ -1,0 +1,6 @@
+id: hard-04
+domain: algo
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 20

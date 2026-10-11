@@ -1,0 +1,6 @@
+id: gen-03
+domain: algo
+difficulty: 3
+points: 1.0
+verifier: pytest
+timeout_minutes: 12

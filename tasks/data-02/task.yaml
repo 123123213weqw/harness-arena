@@ -1,0 +1,6 @@
+id: data-02
+domain: data
+difficulty: 5
+points: 1.0
+verifier: script
+timeout_minutes: 15

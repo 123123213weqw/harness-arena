@@ -1,0 +1,12 @@
+user,event,minutes
+Alice,focus,52
+alice,distraction,10
+Bob ,focus,30
+alice,focus,52
+bob,focus,-5
+Carol,focus,abc
+
+BOB,break,15
+alice,focus,7
+ bob,break,15
+Carol,review,23

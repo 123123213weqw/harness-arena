@@ -1,0 +1,14 @@
+{"id": 3, "name": "carol", "score": 88}
+这不是 JSON
+{"id": 1, "name": "alice", "score": 90}
+{"id": 1, "name": "alice2", "score": 91}
+{"name": "x", "score": 50}
+{"id": "7", "name": "grace", "score": 70}
+{"id": 2, "name": "bob", "score": 105}
+{"id": 2, "name": "bob", "score": 77}
+{"id": 5, "name": "", "score": 60}
+{"id": 4, "name": "dave", "score": 95.5}
+
+{"id": 6, "name": "frank", "score": 100}
+{"id": true, "name": "boolid", "score": 10}
+[1, 2, 3]

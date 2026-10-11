@@ -1,0 +1,7 @@
+id: repo-pf-01
+domain: coding
+difficulty: 4
+points: 1.0
+verifier: pytest
+timeout_minutes: 18
+source: 合成(真实性能事故模式:会话化 O(n²))

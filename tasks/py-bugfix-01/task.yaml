@@ -1,0 +1,6 @@
+id: py-bugfix-01
+domain: coding
+difficulty: 2
+points: 1.0
+verifier: pytest
+timeout_minutes: 10

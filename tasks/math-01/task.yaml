@@ -1,0 +1,6 @@
+id: math-01
+domain: math
+difficulty: 3
+points: 1.0
+verifier: answer
+timeout_minutes: 10

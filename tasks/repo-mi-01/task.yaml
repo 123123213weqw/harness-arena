@@ -1,0 +1,7 @@
+id: repo-mi-01
+domain: coding
+difficulty: 4
+points: 1.0
+verifier: pytest
+timeout_minutes: 15
+source: more-itertools/more-itertools@1ea82a71(真实历史修复)

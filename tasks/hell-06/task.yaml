@@ -1,0 +1,6 @@
+id: hell-06
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 18

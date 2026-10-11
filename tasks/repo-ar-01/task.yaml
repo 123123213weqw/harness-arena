@@ -1,0 +1,7 @@
+id: repo-ar-01
+domain: coding
+difficulty: 4
+points: 1.0
+verifier: pytest
+timeout_minutes: 15
+source: arrow-py/arrow@02445de1(真实历史修复)
