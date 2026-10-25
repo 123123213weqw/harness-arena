@@ -1,0 +1,7 @@
+id: eval-05
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 18
+source: 合成(ISO 8601 周日期规范,边界臭名昭著)

@@ -1,0 +1,7 @@
+id: eval-03
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 18
+source: more-itertools/more-itertools@b2f3aff7(真实历史修复)
