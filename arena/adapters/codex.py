@@ -45,7 +45,9 @@ class CodexAdapter:
         args = [
             self.bin, "exec", "--json",
             "--skip-git-repo-check",
-            "--full-auto",
+            # 0.142 的 --full-auto 已移除;0.164 起用显式沙箱+审批配置
+            "-s", "danger-full-access",
+            "-c", "approval_policy=never",
             "-c", "model_provider=deepseek",
             "-c", f"model={providers.DEEPSEEK_MODEL}",
         ]
