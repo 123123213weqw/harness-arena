@@ -35,7 +35,8 @@ create table if not exists runs (
 class Store:
     def __init__(self, path: str | Path):
         Path(path).parent.mkdir(parents=True, exist_ok=True)
-        self.db = sqlite3.connect(str(path))
+        self.db = sqlite3.connect(str(path), timeout=30.0)  # 并行双轮时等锁而非崩
+        self.db.execute("PRAGMA busy_timeout=30000")
         self.db.execute(DDL)
         for col in ("cache_tokens", "reasoning_tokens"):  # 旧库迁移
             try:

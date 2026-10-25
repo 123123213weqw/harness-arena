@@ -24,6 +24,13 @@ try:  # pi 依赖外部 CLI,装好才注册
 except ImportError:  # pragma: no cover
     pass
 
+try:  # zcode 同理(桌面 app 内的 CLI,部署在 ~/zcode-cli)
+    from .zcode import ZcodeAdapter
+
+    REGISTRY["zcode"] = ZcodeAdapter
+except ImportError:  # pragma: no cover
+    pass
+
 
 def build(name: str) -> Adapter:
     if name not in REGISTRY:
