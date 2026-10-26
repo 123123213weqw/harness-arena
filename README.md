@@ -63,7 +63,28 @@ verifier:`pytest`(隐藏测试)| `answer`(answer.txt 精确比对,期望值写�
 
 新增 harness:实现 `arena/adapters/base.py` 的 `Adapter` 协议(`run(task, workdir) -> AgentRun`),在 `adapters/__init__.py` 注册一行即可。M2 计划:统一 token 强制记账走网关(harness 自报只作交叉核对)+ Docker 沙箱。
 
-## 已完成:四 harness Tier-B 对比
+## 已完成:十三轮 harness 对比(2026-10-01 → 10-26,约 4000 次真实运行)
+
+### 同模型五臂终榜(52 题 × 2,统一 deepseek-flash,思考全开)
+
+| 臂 | 通过 | ¥/解出题 | 均耗时 | 效率分(解出×最低单价/本臂单价) |
+|---|---|---|---|---|
+| **zcode 0.17.0** | **104/104(100%)** | ¥0.44 | 82.0s | 9.5 |
+| claude 2.1.310 | 103/104(99%) | 0.12 | 47.3s | 34 |
+| pi 1.4.0 | 103/104(99%) | **0.04** | 19.6s | **103** |
+| codex 0.164 | 102/104(98%) | 0.10 | 117.5s | 41 |
+| xharness cf9b0fc | 99-101/104 | 0.10-0.12 | 59-62s | 34 |
+
+- **zcode×DeepSeek 首秀即满分夺冠**(104/104 零失败;但每轮新鲜输入 16.5M、缓存利用率仅 ~1×,效率分垫底——能力第一、经济性倒数);
+- **pi 效率分登顶**(满分能力 + 最低单价 + 最快);
+- xharness #394 修复验证:persona 字节级复原(system 7,484→1,739)但**每调用新鲜 token 仍涨**(531→772→1,116),残留膨胀源已反馈 [issue #393](https://github.com/123123213weqw/x-harness-rs/issues/393);
+- zcode 原生 GLM-5.3-Flash 对照:61%——同 harness 换模型档位差 39 个百分点。
+
+### 历轮脉络
+
+R1-2 基线与成本分水岭 → R3 超越智力题击穿 claude → R4 思考全开 → R5 泛化题 → R6 真实仓库修复题(arrow/dateutil/more-itertools,三方求证) → R7 地狱题 L6 → R8 max-output 修复实证(xharness 丢分 60% 系配置 bug) → R9 全上游 2026-10-25(pi 首满分) → R10 52 题新库(claude 翻盘) → R11-13 zcode 五臂上线、换 DeepSeek 满分、xharness 修复验证。
+
+## 已完成:四 harness Tier-B 对比(前八轮)
 
 **最终全量轮(2026-10-03,suite `20261003-201117`,46 题 × 4 臂 × 2 重复 = 368 run,模型统一 `deepseek-chat`)**,下表数字直接由 `sqlite3 runs/arena.db` 查询得出:
 
