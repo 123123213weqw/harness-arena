@@ -14,4 +14,5 @@ export MAX_THINKING_TOKENS=32000
 export ARENA_PI_THINKING=high
 export ARENA_CLAUDE_BIN="$HOME/claude-latest/node_modules/.bin/claude"  # 2.1.310 旁路安装,不动 qqbot 的 2.1.212
 
-exec bash -lc ".venv/bin/python -m arena --adapters xharness,claude-code,codex,pi --repeats 2 $*"
+# PATH 必须在登录 shell 内部 export(bash -lc 会重置外层 PATH,pi 1.4/codex 0.165 需 Node22)
+exec bash -lc "export PATH=$HOME/node22/bin:$PATH; .venv/bin/python -m arena --adapters xharness,claude-code,codex,pi,zcode --repeats 2 $*"
