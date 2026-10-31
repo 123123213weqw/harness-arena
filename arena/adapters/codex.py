@@ -20,6 +20,7 @@ import shutil
 import subprocess
 import time
 from pathlib import Path
+from pathlib import Path
 
 from .. import providers
 from ..schema import Task
@@ -31,7 +32,13 @@ class CodexAdapter:
     model = providers.DEEPSEEK_MODEL
 
     def __init__(self) -> None:
-        self.bin = shutil.which("codex")
+        # 二进制解析不依赖 PATH(nohup/并行链路下 ~/.local/bin 常缺失,full13 全灭教训):
+        # ARENA_CODEX_BIN > shutil.which > ~/.local/bin/codex
+        self.bin = (
+            os.environ.get("ARENA_CODEX_BIN")
+            or shutil.which("codex")
+            or (str(Path.home() / ".local" / "bin" / "codex") if (Path.home() / ".local" / "bin" / "codex").exists() else None)
+        )
 
     def run(self, task: Task, workdir: Path) -> AgentRun:
         if not self.bin:
