@@ -15,7 +15,7 @@ from pathlib import Path
 
 import yaml
 
-DOMAINS = ("coding", "ops", "algo", "math", "frontend", "data", "composite")
+DOMAINS = ("coding", "ops", "algo", "math", "frontend", "data", "composite", "computer-use")
 VERIFIERS = ("pytest", "answer", "script", "human")
 
 

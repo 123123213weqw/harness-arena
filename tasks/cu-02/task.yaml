@@ -1,0 +1,6 @@
+id: cu-02
+domain: computer-use
+difficulty: 5
+points: 1.0
+verifier: script
+timeout_minutes: 18
