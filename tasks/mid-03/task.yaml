@@ -1,0 +1,7 @@
+id: mid-03
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 18
+source: 合成(TTL+LRU 混合缓存,语义组合陷阱)

@@ -1,0 +1,7 @@
+id: mid-02
+domain: coding
+difficulty: 5
+points: 1.0
+verifier: pytest
+timeout_minutes: 18
+source: 合成(markdown 子集渲染,块/行内规则密集)
