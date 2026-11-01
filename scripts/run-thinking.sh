@@ -12,6 +12,7 @@ export XHARNESS_MAX_OUTPUT=65536              # 默认 12288 会被思考烧光(
 export ARENA_CODEX_REASONING=high
 export MAX_THINKING_TOKENS=32000
 export ARENA_PI_THINKING=high
+export PIRS_BIN="$HOME/pi-rs-bin"                    # pi-rs 二进制显式路径(nohup 链路 which 不可靠)
 export ARENA_CLAUDE_BIN="$HOME/claude-latest/node_modules/.bin/claude"  # 2.1.310 旁路安装,不动 qqbot 的 2.1.212
 
 # PATH 必须在登录 shell 内部 export(bash -lc 会重置外层 PATH,pi 1.4/codex 0.165 需 Node22;~/.local/bin 不保证在,见 full13 codex 全灭教训)
