@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Data Vault</title></head>
+<body>
+<h1>Data Vault</h1>
+<div>
+  <button id="tab-a" onclick="showTab('a')">Numbers</button>
+  <button id="tab-b" onclick="showTab('b')">Keys</button>
+  <button id="tab-c" onclick="showTab('c')">Unlock</button>
+</div>
+<div id="panel-a">
+  <ul id="nums">
+    <li>17</li><li>23</li><li>41</li><li>8</li><li>55</li><li>12</li><li>39</li><li>6</li><li>28</li><li>14</li>
+  </ul>
+</div>
+<div id="panel-b" style="display:none">
+  <dl>
+    <dt>alpha</dt><dd>3.14159</dd>
+    <dt>beta</dt><dd>2.71828</dd>
+    <dt>gamma</dt><dd>1.41421</dd>
+  </dl>
+</div>
+<div id="panel-c" style="display:none">
+  <input id="input" type="number" placeholder="Enter sum">
+  <button id="calc" onclick="calculate()">Calculate</button>
+  <p id="output" style="font-family:monospace;font-size:1.5em"></p>
+</div>
+<script>
+function showTab(t) {
+  document.getElementById('panel-a').style.display = t==='a'?'block':'none';
+  document.getElementById('panel-b').style.display = t==='b'?'block':'none';
+  document.getElementById('panel-c').style.display = t==='c'?'block':'none';
+}
+function calculate() {
+  var v = parseInt(document.getElementById('input').value);
+  var nums = [17,23,41,8,55,12,39,6,28,14];
+  var sum = nums.reduce(function(a,b){return a+b},0);
+  if (v === sum) {
+    var h = (sum * 7919 + 12345).toString(16).padStart(6,'0').slice(-6);
+    document.getElementById('output').textContent = 'CODE=' + h;
+  } else {
+    document.getElementById('output').textContent = 'WRONG';
+  }
+}
+</script>
+</body>
+</html>
